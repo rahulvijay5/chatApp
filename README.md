@@ -61,5 +61,5 @@ This document summarizes the features and the development process of implementat
 
 ## 5. Conclusion
 * Successfully integrated database management, and frontend UI.
-* Successfull deployment of the application.
+* Successful deployment of the application.
 * Achieved CRUD operations on the MongoDB Atlas database.
