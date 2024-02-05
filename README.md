@@ -4,7 +4,7 @@ Welcome to PlanWise, a web application for managing tasks efficiently and effect
 ## Overview
 This document summarizes the features and the development process of implementation of the Planwise webApp.
 
-## Technologies Used
+## 1. Technologies Used
 * **Frontend:** React, Tailwind CSS
 * **Backend:** Node.js, Express.js, MongoDB Atlas
 * **Authentication:** JSON Web Tokens (JWT)
