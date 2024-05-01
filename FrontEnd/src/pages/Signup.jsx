@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Signup = () => {
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
+  // const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const baseURL = import.meta.env.VITE_URL;
   
   const [formData, setFormData] = useState({
     userName: "",

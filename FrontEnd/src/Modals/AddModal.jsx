@@ -98,10 +98,6 @@ const AddModal = ({ isOpen, onClose, handleSubmit }) => {
                   }`}
                   onClick={handleCombinedClick}
                   disabled={inputTask.length === 0 || dueDate === ""}
-                  // onClick={() => {
-                  //   handleSubmit(),
-                  //   onClose();
-                  // }}
                 >
                   Save Todo
                 </button>

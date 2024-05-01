@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useUser } from "../contexts/UserContext";
-// import jwt_decode from "jwt-decode";
 import { jwtDecode } from "jwt-decode";
 
 const Login = () => {
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
+  // const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const baseURL = import.meta.env.VITE_URL;
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({

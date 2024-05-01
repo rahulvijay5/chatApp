@@ -1,23 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import CurrentTasks from "../components/CurrentTasks";
-import ExpiredTasks from "../components/ExpiredTasks";
 import Footer from "../components/Footer";
 import { useUser } from "../contexts/UserContext";
 import { ChevronDown } from "../components/Icons";
 import ChangePasswordModal from "../Modals/ChangePasswordModal";
 
 const HomePage = () => {
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
+  // const baseURL = import.meta.env.VITE_API_BASE_URL;
+  const baseURL = import.meta.env.VITE_URL;
   const navigate = useNavigate();
-
-  const [view, setView] = useState("default"); // State to manage the current view
   const [showDropdown, setShowDropdown] = useState(false);
   const [isChangePasswordModalOpen, setIsChangePasswordModalOpen] =
     useState(false);
-    const [error, setError] = useState("");
-  
+  const [error, setError] = useState("");
+
   const { currentUser, setCurrentUser } = useUser();
 
   // console.log(currentUser)
@@ -54,36 +51,8 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col justify-between bg-slate-900">
-        {/* Buttons or tabs to switch between views */}
-        <div className="flex justify-between bg-slate-900 items-center px-4 flex-col sm:flex-row">
-          <div></div>
-          <div className="flex py-2 min-w-[16.3rem] items-center justify-between rounded-3xl text-lg">
-            <div>
-              <button
-                className={` ${
-                  view === "default"
-                    ? "bg-teal-600 hover:bg-teal-700"
-                    : "border-2 hover:bg-slate-700"
-                } text-white h-10 px-3 rounded-l-xl flex items-center`}
-                onClick={() => handleViewChange("default")}
-              >
-                Current Tasks
-              </button>
-            </div>
-            <div>
-              <button
-                className={`${
-                  view === "beforeToday"
-                    ? "bg-teal-600 hover:bg-teal-700"
-                    : "border-2 hover:bg-slate-700"
-                } text-white h-10 px-3 rounded-r-xl flex items-center`}
-                onClick={() => handleViewChange("beforeToday")}
-              >
-                Expired Tasks
-              </button>
-            </div>
-          </div>
+      <div className="min-h-screen text-white p-4 bg-slate-900">
+        <div className="flex justify-end mb-4 bg-slate-900 items-center px-4 flex-col sm:flex-row">
           <div className="text-white">
             <div
               className="flex items-center gap-1 text-lg cursor-pointer"
@@ -112,11 +81,10 @@ const HomePage = () => {
             )}
           </div>
         </div>
-        {/* Display the selected view based on the state */}
-        {view === "default" && <CurrentTasks />}
-        {view === "beforeToday" && <ExpiredTasks />}
 
-        <Footer />
+        <div className="border-2 flex items-center justify-center p-4">
+          Hello
+        </div>
       </div>
       <ChangePasswordModal
         isOpen={isChangePasswordModalOpen}
